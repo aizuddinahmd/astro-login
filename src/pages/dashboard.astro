@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Logout from "../components/logout.svelte";
+---
+
+<Layout>
+  <section>
+    <h1>You're In</h1>
+    <Logout client:only="svelte" />
+  </section>
+</Layout>
+
+<style>
+  section {
+    height: 100vh;
+    background-color: var(--color-secondary);
+    background-image: linear-gradient(
+      to bottom,
+      var(--color-primary),
+      rgb(15 23 42 / 0)
+    );
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
