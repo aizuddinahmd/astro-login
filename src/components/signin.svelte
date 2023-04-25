@@ -26,7 +26,7 @@
       } else {
         console.log(user);
         alert('Successfully logged in');
-        navigate('/dashboard')
+        window.location.href = "/dashboard";
       }
 
     }

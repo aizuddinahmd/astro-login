@@ -25,7 +25,7 @@
       } else {
         console.log(user);
         alert('Successfully signed up');
-        navigate('/')
+        window.location.href = "/";
       }
   }
 </script>

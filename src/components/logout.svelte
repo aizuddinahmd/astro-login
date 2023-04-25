@@ -9,7 +9,7 @@
 
 async function signOut() {
   const { error } = await supabase.auth.signOut()
-  navigate('/')
+  window.location.href = "/";
 }
 </script>
 
