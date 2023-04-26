@@ -1,14 +1,10 @@
 <script>
-    import { createClient } from "@supabase/supabase-js";
-    import { navigate } from "svelte-routing";
-
-    const supabase = createClient(
-  "https://coesiygadkoukhixobzl.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNvZXNpeWdhZGtvdWtoaXhvYnpsIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODIyNTg3MTQsImV4cCI6MTk5NzgzNDcxNH0.7gSQLnoHDTrr9kS6cjOSwWX9O53RUfVS60YsZ3GvILo"
-);
+    import supabase from "../utils/supabase";
 
     let email = "";
     let password="";
+
+    let loggedInUser=""
 
     async function handleSubmit(event) {
       event.preventDefault();
@@ -24,7 +20,8 @@
         console.error(error);
         alert('Error logging in');
       } else {
-        console.log(user);
+        loggedInUser = await supabase.auth.getUser();
+        console.log(loggedInUser);
         alert('Successfully logged in');
         window.location.href = "/dashboard";
       }
