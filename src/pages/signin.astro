@@ -1,0 +1,8 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Signin from "../components/signInForm.svelte";
+---
+
+<Layout>
+  <Signin client:only="svelte" />
+</Layout>

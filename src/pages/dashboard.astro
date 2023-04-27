@@ -1,13 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
-// import Logout from "../components/logout.svelte";
 import Content from "../components/content.svelte";
 ---
 
 <Layout>
   <section>
     <Content client:only="svelte" />
-    <!-- <Logout client:only="svelte" /> -->
   </section>
 </Layout>
 
